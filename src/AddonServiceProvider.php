@@ -57,7 +57,7 @@ class AddonServiceProvider extends ServiceProvider
     public function register(): void
     {
         if ($this->packageDirectoryExistsAndIsNotEmpty('config')) {
-            $this->mergeConfigFrom($this->path.'/config/:lc:package.php', ':lc:vendor.:lc:package');
+            $this->mergeConfigFrom($this->path.'/config/:lc:package.php', 'backpack.:lc:package');
         }
     }
 
@@ -71,7 +71,7 @@ class AddonServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         if ($this->packageDirectoryExistsAndIsNotEmpty('config')) {
             $this->publishes([
-                $this->path.'/config/:lc:package.php' => config_path(':lc:vendor/:lc:package.php'),
+                $this->path.'/config/:lc:package.php' => config_path('backpack/:lc:package.php'),
             ], 'config');
         }
 
