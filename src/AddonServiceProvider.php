@@ -28,7 +28,7 @@ class AddonServiceProvider extends ServiceProvider
         }
         
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/lang')) {
-            $this->loadTranslationsFrom($this->path.'/resources/lang', ':lc:vendor.:lc:package');
+            $this->loadTranslationsFrom($this->path.'/resources/lang', ':lc:vendor');
         }
         
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/views')) {
